@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'title' %} Token Distribution {% endblock 'title' %}
+
+{% block 'content' %}
+<h1 class="titulos"><b>Token Distribution</b></h1>
+
+<h2 class= "subtitulo"><b>What is the total supply of $Ocean?</b></h2>
+<p class="texto">1,000,000 tokens</p>
+
+<h2 style="padding-top: 100px;"><b>How will it be distributed?</b></h2>
+
+<img class= "imagem" src="{% static 'img/grafic.png'%}" onclick="enlarge()"></a>
+
+<p class="texto">600,000 60% Pre-Sale</p>
+<p class="texto">360,000 36% locked liquidity for 1 year</p>
+<p class="texto">40,000 4% platform liquidity</p>
+
+{% endblock 'content' %}

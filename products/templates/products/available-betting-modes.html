@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'title' %} Available betting modes {% endblock 'title' %}
+
+{% block 'content' %}
+<h1 class="titulos"><b>Available betting modes</b></h1>
+
+<h4 class = "textodest">Currently we have 4 available betting modes on our platform, they are:</h4>
+
+
+<h2 class= "subtitulo"><b>Coinflip</b></h2>
+
+<p class="texto">Coinflip is a betting mode that involves flipping a virtual coin. Two players bet on the outcome of the coin flip (heads or tails) and the winner takes the entire pot.</p>
+
+
+<img class= "imagem" src="{% static 'img/coinflip.png'%}" alt="Coinflip" onclick="enlarge()">
+
+
+<video class= "video" src="{% static 'video/coinflip.mp4'%}" controls autoplay>Your browser does not support the video tag.</video>
+
+
+
+<h2 class= "subtitulo"><b>Lottery</b></h2>
+
+<p class="texto">The game is played by choosing six numbers from a pool of 60 numbers. 
+    Players can choose their own numbers or have them randomly selected by the system. Draws will initially be held once a week, on Sunday, 
+    and the numbers are drawn using our fully Fair and scam-free system, containing its Hash. To win the jackpot, players must match all six numbers. 
+    If there are no winners for a particular draw, the jackpot rolls over to the next draw. In addition to the jackpot, there are also prizes for matching five, 
+    four, three, two and one numbers. The prize money is distributed among the winners of each category.</p>
+
+<!--<img src="{% static 'img/double.png'%}" alt="Double" width="1000px" height= auto style="padding-bottom: 50px;"></a>-->
+
+
+<h2 class= "subtitulo"><b>Crash</b></h2>
+
+<p class="texto">This popular betting mode consists of placing a bet and withdrawing it before the boat explodes, 
+    and the multiplier, as well as the risk, increases over time.</p>
+
+<img class="imagem" src="{% static 'img/crash.png'%}" alt="Crash" onclick="enlarge()">
+
+<video class= "video" src="{% static 'video/crash.mkv'%}" controls autoplay>Your browser does not support the video tag.</video>
+
+
+<h2 class= "subtitulo"><b>Double</b></h2>
+
+<p class="texto">The Double betting mode is a probability-based betting game in which players bet on one of 3 colors: 
+    green, red, and black. Green pays 14X the bet amount, red and black pay 2X. The player has the option to "double" their bet multiple times, 
+    thus increasing the potential for winnings but also increasing the risk of loss. The objective is to choose the correct color.</p>
+
+<img class= "imagem" src="{% static 'img/double.png'%}" alt="Double" onclick="enlarge()">
+
+<video class= "video" src="{% static 'video/double.mkv'%}" controls autoplay style="padding-bottom: 5%;">Your browser does not support the video tag.</video>
+
+{% endblock 'content' %}

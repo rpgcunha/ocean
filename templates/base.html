@@ -1,0 +1,299 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block 'title' %}{% endblock %}</title>  
+
+  <style>
+    @media (min-width: 601px) {
+      body{
+        background-image : url({% static 'img/fundo.jpg'%});
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        font-size: 16px;
+      }
+
+      .navegador {
+        width: 20%; 
+        border-right: solid 2px #2b3035;
+      }
+      
+      .conteudo {
+        width: 80%;
+        text-align: center;
+      }
+
+      .cat {
+        display: flex;
+        padding: 10% 15%;
+        padding-bottom: 5%;
+      }
+
+      .subcat {
+        display: flex;
+        padding: 1% 17%;
+      }
+
+      .table {
+        display: block;
+        font-size: 150%;
+        font-weight: bold;
+        color: #2b3035;
+        text-decoration: none;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+      }
+
+      .disabled {
+        pointer-events: none;
+        font-size: 150%;
+        font-weight: bold;
+        color: #2b3035;
+        text-decoration: none;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+        cursor: default;
+      }
+
+      .table.sub{
+        font-size: 120%;
+      }
+
+      .titulos {
+        padding-top: 7%;
+      }
+
+      .subtitulo {
+        padding: 3%;
+      }
+
+      .textodest {
+        padding: 3%;
+      }
+
+      .texto {
+        padding: 1% 10%;
+      }
+
+      .imagem {
+        padding-bottom: 1%;
+        width: 60%;
+        height: auto;
+      }
+
+      .video {
+        width: 60%;
+        height: auto;
+      }
+    }
+
+    @media (max-width: 600px) {
+      body{
+        background-image : url({% static 'img/fundo.jpg'%});
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        font-size: 16px;
+      }
+
+      .navegador {
+        width: 25%; 
+        border-right: solid 2px #2b3035;
+      }
+
+      .conteudo {
+        width: 75%;
+        text-align: center;
+      }
+
+      .cat {
+        padding-bottom: 8%;
+      }
+
+      .subcat {
+        padding: 5% 2%;
+      }
+      
+      .table {
+        display: block;
+        font-size: 120%;
+        font-weight: bold;
+        color: #2b3035;
+        text-decoration: none;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+      }
+
+      .disabled {
+        pointer-events: none;
+        font-size: 120%;
+        font-weight: bold;
+        color: #2b3035;
+        text-decoration: none;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+        cursor: default;
+      }
+
+      .table.sub{
+        font-size: 100%;
+      }
+
+      .titulos {
+        padding-top: 0%;
+      }
+
+      .subtitulo {
+        padding: 0%;
+      }
+
+      .textodest {
+        padding: 0%;
+      }
+
+      .texto {
+        padding: 0% 1%;
+      }
+
+      .imagem {
+        
+      }
+
+      .imagem {
+        width: 95%;
+        height: auto;
+        padding-bottom: 0%;
+      }
+
+      .video {
+        width: 95%;
+        height: auto;
+      }
+    }
+
+    .cabecalho {
+      display: flex;
+      background-color : #2b3035;
+    }
+
+    .corpo {
+      display: flex; 
+      flex-direction: row; 
+      height: 100%;
+    }
+    
+    .active {      
+      color: #145ff4;
+    }
+  </style>
+
+  <script>
+    function enlarge() {
+      var img = document.getElementsByClassName("imagem");
+      for (var i = 0; i < img.length; i++) {
+          if (img[i].requestFullscreen) {
+              img[i].requestFullscreen();
+          } else if (img[i].mozRequestFullScreen) { /* Firefox */
+              img[i].mozRequestFullScreen();
+          } else if (img[i].webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+              img[i].webkitRequestFullscreen();
+          } else if (img[i].msRequestFullscreen) { /* IE/Edge */
+              img[i].msRequestFullscreen();
+          }
+      }
+    }
+  </script>
+</head>
+
+<body >
+  <!-- Cabeçalho-->
+  <div class="cabecalho">
+    <div class="text-center">
+      <a href="/"><img src="{% static 'img/ocean.png'%}" alt="Ocean" width="10%" height=auto style="padding: 0.5% 0.5%"></a>      
+    </div>
+  </div>
+ 
+  <!-- Corpo -->
+  <div class = "corpo">
+    <!-- Nav Vertical-->
+    <div class="navegador">
+      <nav>
+        <div class="cat">
+          <a class="table" aria-current="page" href="/"><b>About Us</b></a>
+        </div>
+        <div class="cat">
+          <a class="disabled"><b>Products</b></a>
+        </div>
+        <div class="subcat">
+          <a class="table sub" href="/products/betting-security/">Betting Security</a>
+        </div>
+        <div class="subcat">
+          <a class="table sub" href="/products/available-betting-modes/">Available Betting Modes</a>
+        </div>
+        <div class="subcat">
+          <a class="table sub" href="/products/pre-sale/">Pre-sale</a>
+        </div>
+        <div class="subcat">
+          <a class="table sub" href="/products/token/">Token</a>
+        </div>
+        <div class="subcat">
+          <a class="table sub" href="/products/royalty-cards/">Royalty Cards</a>
+        </div>
+        <div class="subcat">
+          <a class="table sub" href="/products/market-place/">Market Place</a>
+        </div>
+        <div class="subcat">
+          <a class="table sub" href="/products/road-map/">Road Map</a>
+        </div>
+        <div class="cat">
+          <a class="disabled"><b>Tokenomics</b></a>
+        </div>
+        <div class="subcat">
+          <a class="table sub" href="/tokenomics/$ocean/">$Ocean</a>
+        </div>
+        <div class="subcat">
+          <a class="table sub" href="/tokenomics/token-distribution/">Token Distribution</a>
+        </div>
+        <div class="subcat">
+          <a class="table sub" href="/tokenomics/royalty-cards-details/">Royalty Cards Details</a>
+        </div>
+        <div class="subcat">
+          <a class="table sub" href="/tokenomics/contracts/">Contracts</a>
+        </div>
+        <div class="cat">
+          <a class="disabled" ><b>Extras</b></a>
+        </div>
+        <div class="subcat">
+          <a class="table sub" href="/extras/social-media/">Social Media</a>
+        </div>
+      </nav>
+
+      <script>
+        // Obtém todos os links da navbar
+        var links = document.querySelectorAll("nav a");
+        // Obtém a URL atual
+        var currentUrl = window.location.href;
+      
+        // Verifica qual link corresponde à URL atual
+        for (var i = 0; i < links.length; i++) {
+          if (links[i].href === currentUrl) {
+            // Adiciona a classe "active" ao link correspondente
+            links[i].classList.add("active");
+          }
+        }
+      </script>
+    </div>
+
+
+
+  <!-- Page Content -->
+        <div class="conteudo">
+          {% block 'content' %}{% endblock %}
+        </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

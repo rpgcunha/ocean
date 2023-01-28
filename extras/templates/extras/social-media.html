@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'title' %} Social {% endblock 'title' %}
+
+{% block 'content' %}
+<h1 class="titulos"><b>Social</b></h1>
+
+<img src="{% static 'img/twitter.gif'%}" width="7%" height=auto style="padding-top: 5%;">
+<h4><a href="https://twitter.com/BetOceanz">Twitter</a></h5>
+<img src="{% static 'img/telegramv1.1.png'%}" width="7%" height=auto style="padding-top: 5%;">
+<h4><a href="https://t.me/OceanzBet">Join Telegram</a></h5>
+<img src="{% static 'img/mailv1.1.gif'%}" width="7%" height=auto style="padding-top: 5%;">
+<h4><a href="mailto:oceanz.me@hotmail.com">Send E-mail</a></h5>
+
+{% endblock 'content' %}
